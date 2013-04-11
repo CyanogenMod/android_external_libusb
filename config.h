@@ -52,10 +52,12 @@
 /* #undef NO_MINUS_C_MINUS_O */
 
 /* Darwin backend */
-#define OS_DARWIN /**/
-
+#if defined(__APPLE__)
+#define OS_DARWIN
+#elif defined(__linux__)
 /* Linux backend */
-/* #undef OS_LINUX */
+#define OS_LINUX
+#endif
 
 /* Name of package */
 #define PACKAGE "libusb"
